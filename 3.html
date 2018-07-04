@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>闭合路径</title>
+		<script>
+			/*
+				1.要有画布  canvas标签的宽和高不能在css中设置，宽和高不能有px
+				2.创建绘图对象
+				3.开始位置
+				4.结束为止
+				5.画图
+			*/
+		</script>
+		<style>
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+    </head>
+    <body>
+        <canvas width="800" height="500"></canvas>
+		<script>
+			//获取画布
+			var c=document.querySelector("canvas");
+			//获取绘图的对象
+			var ctx=c.getContext('2d');
+			
+			//画三角形
+			ctx.moveTo(100,100);
+			ctx.lineTo(100,300);
+			ctx.lineTo(400,300);
+			ctx.closePath();//闭合路径,画图就差最后一步使用
+			ctx.stroke();
+		</script>
+    </body>
+</html>

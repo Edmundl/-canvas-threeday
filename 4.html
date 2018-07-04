@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>线性渐变</title>
+		<script>
+			/*
+				1.要有画布  canvas标签的宽和高不能在css中设置，宽和高不能有px
+				2.创建绘图对象
+				3.开始位置
+				4.结束为止
+				5.画图
+			*/
+		</script>
+		<style>
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+    </head>
+    <body>
+        <canvas width="800" height="500"></canvas>
+		<script>
+			//获取画布
+			var c=document.querySelector("canvas");
+			//获取绘图的对象
+			var ctx=c.getContext('2d');
+			//创建渐变的方案
+			//起始位置的横纵坐标,结束位置的横纵坐标
+			var lgd=ctx.createLinearGradient(100,100,500,100);
+			//添加渐变颜色
+			//0---开始的百分比
+			//1---结束得百分比
+			//0到1的小数
+			lgd.addColorStop(0,"red");
+			lgd.addColorStop(0.2,"blue");
+			lgd.addColorStop(0.5,"yellow");
+			lgd.addColorStop(1,"green");
+			//把渐变方案给strokeStyle
+			ctx.strokeStyle=lgd;
+			
+			ctx.moveTo(100,100);
+			ctx.lineTo(500,100);
+			ctx.lineWidth=20;
+			ctx.stroke();
+		</script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>title</title>
+		<script>
+			/*
+				1.要有画布  canvas标签的宽和高不能在css中设置，宽和高不能有px
+				2.创建绘图对象
+				3.开始位置
+				4.结束为止
+				5.画图
+			*/
+		</script>
+		<style>
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+    </head>
+    <body>
+        <canvas width="800" height="600"></canvas>
+		<script>
+			//获取画布
+			var c=document.querySelector("canvas");
+			//获取绘图的对象
+			var ctx=c.getContext('2d');
+			
+			//画一条线
+			//开始位置(横纵坐标)
+			ctx.moveTo(100,100);
+			//结束为止
+			ctx.lineTo(300,100);
+			//设置线得颜色
+			ctx.strokeStyle="red";
+			//设置显得粗细
+			// ctx.lineWidth=10;
+			//开始画
+			ctx.stroke();
+			
+			//再画一条线
+			//重置路径,为了防止画笔重复画
+			ctx.beginPath();
+			//开始位置(横纵坐标)
+			ctx.moveTo(100,200);
+			//结束为止
+			ctx.lineTo(400,200);
+			//设置线得颜色
+			ctx.strokeStyle="red";
+			//设置显得粗细
+			// ctx.lineWidth=10;
+			//开始画
+			ctx.stroke();
+		</script>
+    </body>
+</html>

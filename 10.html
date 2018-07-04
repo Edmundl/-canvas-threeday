@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>绘制图片</title>
+		<script>
+			/*
+				1.要有画布  canvas标签的宽和高不能在css中设置，宽和高不能有px
+				2.创建绘图对象
+				3.开始位置
+				4.结束为止
+				5.画图
+			*/
+		</script>
+		<style>
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+    </head>
+    <body>
+        <canvas width="800" height="500"></canvas>
+		<script>
+			//获取画布
+			var c=document.querySelector("canvas");
+			//获取绘图的对象
+			var ctx=c.getContext('2d');
+			
+			//绘制图片
+			var img=document.createElement("img");
+			img.src="icon.png";
+			//图片和画布发生关系,才可以绘制图片
+			//图片加载
+			img.onload=function(){
+				//图片对象,画布的横纵坐标,图片宽和高
+				ctx.drawImage(img,100,100,200,200);
+				//截图片,(图片对象，图片选择的横纵坐标，图片的宽和高，画图的横纵坐标，图片显示的宽和高)
+				ctx.drawImage(img,300,100,50,50,300,300,60,60);
+			};
+		</script>
+    </body>
+</html>

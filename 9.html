@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>绘制文本</title>
+		<script>
+			/*
+				1.要有画布  canvas标签的宽和高不能在css中设置，宽和高不能有px
+				2.创建绘图对象
+				3.开始位置
+				4.结束为止
+				5.画图
+			*/
+		</script>
+		<style>
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+    </head>
+    <body>
+        <canvas width="800" height="500"></canvas>
+		<script>
+			//获取画布
+			var c=document.querySelector("canvas");
+			//获取绘图的对象
+			var ctx=c.getContext('2d');
+			
+			//绘制文本
+			ctx.font="50px 全新硬笔行书简";
+			ctx.textAlign="center";
+			ctx.textBaseline="middle";
+			ctx.shadowColor="red";
+			//水平方向便宜领
+			ctx.shadowOffsetX=5;
+			ctx.shadowOffsetY=5;
+			//阴影模糊度
+			ctx.shadowBlur=5;
+			//参数1:文字内容,参数2:横坐标,参数3:纵坐标
+			//镂空的效果
+			ctx.strokeText("全网最帅",300,200);
+		</script>
+    </body>
+</html>
